@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- Use TextView to display the results of a button click -->
+
+    <TextView
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:lines="1"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Use TextView to display the results of the evaluated expression -->
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="40sp" />
+
+    <!-- Use Table Layout for keypad -->
+
+    <TableLayout
+
+        android:background="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        >
+
+        <!-- Row 1-->
+
+        <TableRow
+
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/b6"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_6"
+                />
+            <Button
+                android:id="@+id/b7"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_7" />
+
+            <Button
+                android:id="@+id/b8"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_8"
+
+                />
+
+            <Button
+                android:id="@+id/b9"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_9" />
+
+            <Button
+                android:id="@+id/clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/clear"
+                android:textSize="30sp"
+                android:layout_marginEnd="10dp"
+                style="@style/ExtraButtons"
+                android:onClick="clearAction"
+                android:layout_span="2"
+
+                />
+
+            <Button
+                android:id="@+id/backspace"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/back"
+                style="@style/ExtraButtons"
+                android:onClick="backspaceAction"
+                />
+
+        </TableRow>
+
+        <!-- Row 2 -->
+        <TableRow
+
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            >
+
+            <Button
+                android:id="@+id/b2"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_2"
+
+                />
+            <Button
+                android:id="@+id/b3"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_3"
+                />
+
+            <Button
+                android:id="@+id/b4"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_4"
+                />
+            <Button
+                android:id="@+id/b5"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_5"
+                />
+            <Button
+                android:id="@+id/add"
+                style="@style/OpStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/add"
+                android:onClick="addAction"
+                />
+
+            <Button
+                android:id="@+id/sub"
+                style="@style/OpStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/sub"
+                android:onClick="subtractAction"
+                />
+            <Button
+                android:id="@+id/multiply"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                style="@style/OpStyle"
+                android:text="@string/x"
+                android:onClick="multAction"
+                />
+
+
+        </TableRow>
+
+        <!-- Row 3 -->
+        <TableRow
+
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/b0"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_0" />
+
+            <Button
+                android:id="@+id/b1"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/_1"
+
+                />
+            <Button
+                android:id="@+id/dec"
+                style="@style/ExtraButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/dec"
+                android:onClick="decimalAction"
+                />
+            <Button
+                android:id="@+id/sign"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/ans"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp"
+                style="@style/ExtraButtons"
+                android:onClick="ansAction"
+                android:backgroundTint="@color/purple_200"
+                />
+
+
+
+
+
+
+            <Button
+                android:id="@+id/div"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/div"
+                android:layout_marginEnd="10dp"
+                style="@style/OpStyle"
+                android:onClick="divideAction"
+                />
+
+
+            <Button
+                android:id="@+id/equal"
+                style="@style/EqualButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:text="@string/eq"
+                android:textColor="@color/black"
+                android:layout_span="2"
+                android:onClick="evaluateAction"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+</LinearLayout>

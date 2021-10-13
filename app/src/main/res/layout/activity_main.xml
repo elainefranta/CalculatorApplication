@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- Use TextView to display the results of a button click -->
+    <TextView
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+
+        android:textSize="40sp"
+        android:textColor="@color/black"
+
+        />
+    <!-- Use TextView to display the results of the evaluated expression -->
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:textSize="50sp"
+        />
+
+    <!-- Grid layout to make keypad with evenly sized and spaced buttons -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignBounds"
+        android:background="@color/grey"
+        >
+        <!-- First row of buttons -->
+        <Button
+            android:id="@+id/clear"
+            android:text="@string/c"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ExtraButtons"
+            android:onClick="clearAction"
+
+            />
+
+        <Button
+            android:id="@+id/backspace"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:text="@string/back"
+            style="@style/ExtraButtons"
+            android:onClick="backspaceAction"
+            />
+
+        <Button
+            android:id="@+id/sign"
+            style="@style/ExtraButtons"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:onClick="ansAction"
+            android:text="@string/ans"
+            android:textSize="24sp"
+            />
+
+        <Button
+            android:id="@+id/div"
+            style="@style/OpStyle"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:text="@string/div"
+            android:onClick="divideAction"/>
+
+        <!-- Second row of buttons -->
+        <Button
+            android:id="@+id/b7"
+            android:text="@string/_7"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+        <Button
+            android:id="@+id/b8"
+            android:text="@string/_8"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+
+        <Button
+            android:id="@+id/b9"
+            android:text="@string/_9"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+        <Button
+            android:id="@+id/multiply"
+            android:text="@string/x"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/OpStyle"
+            android:onClick="multAction"
+
+            />
+        <!-- Third row of buttons -->
+        <Button
+            android:id="@+id/b4"
+            android:text="@string/_4"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+            />
+        <Button
+            android:id="@+id/b5"
+            android:text="@string/_5"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+
+        <Button
+            android:id="@+id/b6"
+            android:text="@string/_6"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+
+            />
+        <Button
+            android:id="@+id/sub"
+            android:text="@string/sub"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/OpStyle"
+            android:onClick="subtractAction"
+
+            />
+        <!-- Fourth row of buttons -->
+        <Button
+            android:id="@+id/b1"
+            android:text="@string/_1"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+
+        <Button
+            android:id="@+id/b2"
+            android:text="@string/_2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+        <Button
+            android:id="@+id/b3"
+            android:text="@string/_3"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+        <Button
+            android:id="@+id/add"
+            android:text="@string/add"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/OpStyle"
+            android:onClick="addAction"
+
+            />
+        <!-- Fifth row of buttons -->
+        <Button
+            android:id="@+id/dec"
+            android:text="@string/dec"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ExtraButtons"
+            android:onClick="decimalAction"
+            />
+
+        <Button
+            android:id="@+id/b0"
+            android:text="@string/_0"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/ButtonStyle"
+
+            />
+
+
+        <Button
+            android:id="@+id/equal"
+            android:layout_columnSpan="2"
+            android:text="@string/eq"
+            android:layout_columnWeight="2"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            style="@style/EqualButtons"
+            android:onClick="evaluateAction"
+
+            />
+
+    </GridLayout>
+
+</LinearLayout>
